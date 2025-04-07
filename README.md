@@ -1,59 +1,83 @@
 
 ---
 
-# Checksubdomain
+## Checksubdomain - Subdomain Takeover Checker
 
-Checksubdomain adalah tools sederhana untuk mengecek kemungkinan subdomain takeover pada daftar subdomain yang kamu miliki. Tools ini sangat cocok digunakan oleh pentester, bug bounty hunter, dan para praktisi keamanan siber lainnya.
+**Checksubdomain** adalah tool Python sederhana untuk mendeteksi kemungkinan subdomain takeover secara otomatis dari daftar subdomain yang ditentukan.
 
-## Fitur
+### Fitur:
+- Cek status HTTP dan CNAME dari subdomain
+- Deteksi kemungkinan vulnerable takeover
+- Output hasil ke file `hasil.txt`
+- Mudah digunakan, cocok untuk pemula hingga profesional
 
-- Cek kemungkinan subdomain takeover  
-- Menampilkan status domain: vuln / not vuln  
-- Menyimpan hasil ke `hasil.txt`  
-- Tampilan ASCII banner menarik  
+---
 
-## Cara Install
+### Instalasi
+
+1. Clone repositori ini:
 
 ```bash
-git clone https://github.com/pajarpriandan/Checksubdomain
+git clone https://github.com/pajarpriandan/Checksubdomain.git
 cd Checksubdomain
+```
+
+2. Install dependensi:
+
+```bash
 pip install -r requirements.txt
 ```
 
-## Cara Penggunaan
+---
 
-1. Siapkan daftar subdomain dalam file `.txt`, misalnya: `targets.txt`  
-2. Jalankan perintah berikut:
+### Penggunaan
+
+1. Buat file target subdomain dengan `nano`:
 
 ```bash
-python3 pajartakeover.py
+nano targets.txt
 ```
 
-3. Masukkan nama file target saat diminta, contoh:
+Contoh isi `targets.txt`:
 
 ```
-[?] Masukkan nama file target: targets.txt
+sub1.example.com
+sub2.example.com
+blog.example.com
 ```
 
-4. Tools akan mulai memeriksa tiap subdomain dan memberi tahu apakah rentan terhadap takeover atau tidak.
+Setelah selesai mengetik, tekan:
 
-## Output
+- `CTRL + X` untuk keluar
+- Tekan `Y` lalu `Enter` untuk menyimpan
 
-- Hasil akan ditampilkan di terminal  
-- Semua subdomain yang vuln akan disimpan ke `hasil.txt`
+2. Jalankan tools:
 
-## Contoh
-
-```
-[!] Memulai scan...
-[+] Memeriksa: blog.example.com
-[VULN] Subdomain VULNERABLE: blog.example.com
+```bash
+python3 takeover.py targets.txt
 ```
 
-## Credit
+---
 
-Dibuat oleh @pajarpriandana  
+### Output
+
+- Semua hasil akan tersimpan di file `hasil.txt`
+- Jika subdomain terdeteksi vulnerable, akan muncul:
+
+```
+[VULN] subdomain.example.com kemungkinan bisa di-takeover!
+```
+
+---
+
+### Peringatan
+
+Tools ini dibuat untuk tujuan edukasi dan pengujian keamanan yang legal.  
+**Saya tidak bertanggung jawab atas penyalahgunaan tools ini oleh pihak lain.**  
+Gunakan dengan bijak dan hanya pada domain yang kamu miliki atau memiliki izin.
+
+Credit
+Dibuat oleh @pajarpriandana
 Follow IG: @ox_pajarpriandana
-
 ---
 
