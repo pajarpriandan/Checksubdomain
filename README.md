@@ -20,13 +20,14 @@
 ```bash
 git clone https://github.com/pajarpriandan/Checksubdomain.git
 cd Checksubdomain
+
 ```
 
 2. Install dependensi:
 
 ```bash
+
 pip install -r requirements.txt
-```
 
 ---
 
@@ -54,7 +55,8 @@ Setelah selesai mengetik, tekan:
 2. Jalankan tools:
 
 ```bash
-python3 takeover.py targets.txt
+python3 pajartakeover.py targets.txt
+
 ```
 
 ---
